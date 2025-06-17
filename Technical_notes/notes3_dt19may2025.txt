@@ -1,0 +1,190 @@
+1. open notepad in admin mode
+2. type teh following content
+
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<img width="500" height="400"  src="image1.jpg"  />
+
+
+</body>
+</html>
+
+3. keep the image and html file in the same folder.
+
+note: image can be anywhere, but initially save the image and html file in the same folder
+
+4. now open the html file in browser
+
+
+5. verify the result
+
+
+image in absolute path 
+--------------------------------
+absolute path: image path does not depend on the source html file
+
+1.  the steps can be followed for this sample but keep the image in a separate folder
+2. mention the entire path of the image file in 'src' attribute of the image tag
+3. open it in browser and verify the result
+
+
+sample
+--------------------
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<img width="500" height="400"  src="D:\vnkt\wd_batch2_11am_fs\imgs\image1.jpg"  />
+
+
+</body>
+</html>
+
+relative path sample : path of the image depends on the path of html source file
+--------------------------------
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<img width="500" height="400"  src="imgs\image1.jpg"  />
+
+
+</body>
+</html>
+
+
+relative unit : %   [depnds on other elements like browser size, parent element and so on]
+-------------------------
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<img width="100%" height="400"  src="image1.jpg"  />
+
+
+</body>
+</html>
+
+note:
+  in Src attribute image link can be using internet link also
+
+
+redirection
+----------------------
+   process of moving one page into another page
+this can done using anchor tag, form tag
+
+redirection using anchor tag
+-------------------------------------
+
+sample2.html
+-------------------
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<a  href="sample1.html" >  click here </a>
+
+
+</body>
+</html>
+
+sample1.html
+-----------------------
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<img width="100%" height="400"  src="image1.jpg"  />
+
+
+</body>
+</html>
+
+-----------------------------------------
+
+redirection using absolute path
+
+sample
+-------------
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<a  href="D:\vnkt\wd_batch2_11am_fs\sample1.html" >  click here </a>
+
+
+</body>
+</html>
+
+external redirection
+-----------------------------
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<a  href="https://www.google.com" >  click here </a>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

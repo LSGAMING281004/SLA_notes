@@ -1,0 +1,226 @@
+typography
+-----------------
+ it defines the color, size, space and shape of the texts.
+
+color:
+   color:red;
+   color:rgb(255, 0, 0);
+   color:#FF000;
+   color:rgba(255, 0, 0.5);
+
+size:
+font-size:30px;   absolute value
+font-size:x-large;   absolute value 
+font-size:xx-large;   absolute value
+font-size:x-small;   absolute value
+font-size:xx-small;;   absolute value
+font-size:90%;   relative value. depnds on parent element
+font-size:smaller;   relative value. depnds on parent element
+font-size:larger;   relative value. depnds on parent element
+
+x-large, xx-large - pixel size is between 24-48 but not exact values
+
+shape:
+font-family:times new romen;
+font-family:arial;
+font-family:serif; //letters having stroke edges
+font-family:sans-serif; // letter does not having stroke edges
+font-family:cursive; // letter will be cursive writing
+
+font-weight:bold;
+font-weight:normal;
+font-weight:700;
+font-weight:400; 
+
+100 - 900
+
+text-decoration:underline;
+text-decoration:overline;
+text-decoration:line-through;
+text-decoration:none;
+
+space:
+
+line-height: 20px; defines the height of the writing line for the texts.
+letter-spacing:2px;  defines the space between the letters
+
+
+writing-mode:vertical-lr; vertical direction and left to right writing direction
+writing-mode:vertical-rl; vertical direction and right to left writing direction
+text-orientation:upright;
+
+
+<html>
+
+<head>
+<style>
+
+html
+{
+font-size:50px;
+}
+
+#div1
+{
+
+color:white;
+background-color:dodgerblue;
+
+
+font-size:20px;
+
+}
+
+#para1
+{
+
+color:green;
+background-color:yellow;
+
+font-size:larger;
+
+text-decoration:none;
+
+font-family:arial;
+
+font-weight:900;
+
+letter-spacing:5px;
+line-height:50px;
+
+}
+
+
+#para2
+{
+
+color:yellow;
+background-color:brown;
+
+writing-mode:vertical-rl;
+text-orientation:upright;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1">
+
+this is div content
+
+<p id="para1"> this is para content </p>
+
+</div>
+
+<p id="para2">
+line 1 <br>
+line 2 <br>
+line 3 <br>
+</p>
+
+
+</body>
+
+</html>
+
+----------------------------------------------------------------------
+
+
+
+
+
+inline, block and inline-block
+---------------------------------------
+inline: the elements takes the width as much as the content is required
+block : the lements takes the entire width of the browser irrespective of the content's width
+inline-block : it works like inline element but changed to block level behaviour when it has to wrap.
+
+sample
+----------
+<html>
+
+<head>
+<style>
+
+#div1
+{
+
+color:green;
+background-color:yellow;
+font-size:40px;
+
+display:inline-block;
+
+}
+
+
+#div2
+{
+
+color:red;
+background-color:blue;
+font-size:40px;
+
+display:inline-block;
+
+}
+
+
+#div3
+{
+
+color:white;
+background-color:purple;
+font-size:40px;
+
+display:inline-block;
+
+}
+
+
+
+span
+{
+
+color:blue;
+background-color:yellow;
+font-size:40px;
+
+
+
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1"> this is div1 jjjjjjjjjjjjjjjjjjjjjjjjjj </div> 
+<div id="div2"> this is div2 kkkkkkkkkkkkkkkkkkkkkkkkkk </div> 
+<div id="div3"> this is div3 llllllllllllllllllllllllll </div> 
+
+<span>this is span </span>
+
+<span>
+
+ <div> inside span </div>
+
+</span>
+
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,195 @@
+table creation
+-------------------------
+
+<table>, </table> tags are used to create the table
+<tr></tr> - table row - tags are used to create the rows
+<td>, </td> - table data - tags are used to create the table columns [cells]
+border - attribute defines the border width of the table
+width , height - defines the width and height of the table. it can be in pixel or percentage
+
+note:
+pixel unit is a absolute unit. it does not depend on any other values
+% is a relative unit. it depends on the screen width and height.
+
+
+sample
+-----------------
+
+
+<html>
+
+<head>
+
+<title>  sample </title>
+
+</head>
+
+<body>
+
+<table border="2" width="100%"  height="300">
+
+ <tr>
+   
+   <td>  rollno </td>
+   <td>  name </td>
+   <td>  mark </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 1 </td>
+    <td>  aaa </td>
+    <td> 60 </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 2 </td>
+    <td>  bbb </td>
+    <td> 70 </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 3 </td>
+    <td>  ccc </td>
+    <td> 80 </td>
+
+ </tr>
+
+
+</table>
+
+
+</body>
+
+</html>
+
+
+table with colspan
+--------------------------
+colspan attribute is used to expand the cell into no of columns
+
+sample
+----------------
+<html>
+
+<head>
+
+<title>  sample </title>
+
+</head>
+
+<body>
+
+<table border="2" width="100%"  height="300">
+
+ <tr>
+  <td colspan="3" align="center">
+       Student Details
+  </td>
+  
+ </tr>
+
+ <tr>
+   
+   <td>  rollno </td>
+   <td>  name </td>
+   <td>  mark </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 1 </td>
+    <td>  aaa </td>
+    <td> 60 </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 2 </td>
+    <td>  bbb </td>
+    <td> 70 </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 3 </td>
+    <td>  ccc </td>
+    <td> 80 </td>
+
+ </tr>
+
+
+</table>
+
+
+</body>
+
+</html>
+
+<html>
+
+<head>
+
+<title>  sample </title>
+
+</head>
+
+<body>
+
+<table border="2" width="100%"  height="300">
+
+ 
+
+ <tr>
+   <td rowspan="4"> Student Details </td>
+   <td>  rollno </td>
+   <td>  name </td>
+   <td>  mark </td>
+
+ </tr>
+
+ <tr>
+   
+    <td> 1 </td>
+    <td>  aaa </td>
+    <td> 60 </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 2 </td>
+    <td>  bbb </td>
+    <td> 70 </td>
+
+ </tr>
+
+ <tr>
+
+    <td> 3 </td>
+    <td>  ccc </td>
+    <td> 80 </td>
+
+ </tr>
+
+
+</table>
+
+
+</body>
+
+</html>
+
+
+
+
+
+

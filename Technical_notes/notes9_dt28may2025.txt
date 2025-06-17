@@ -1,0 +1,225 @@
+block level elements
+----------------------------------
+  this elements takes the entire width of the screen irrespective of the content's size
+
+inline elements
+-------------------------------
+  this element takes the width as much as the content is required
+
+
+block level elements
+1. div
+2. p - para
+3. h1 - h6
+
+inline elements
+----------------------
+1. span
+2. img
+3. a - anchor tag
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<div style="background-color:purple;"> hello1 </div>
+
+<div style="background-color:green;"> hello2 </div>
+
+<p style="background-color:orange;"> this is para </p>
+
+this is <span style="background-color:blue;" >hello</span> message 
+
+
+</body>
+
+</html>
+
+list elements  [ block level elements]
+-----------------------------------------------
+ it is used to display set of items in list formats.
+
+1. unordered list.
+   it does support only bullets
+
+2. ordered list
+   it does support numbering, alphabatical order system
+
+3. description list
+   it is used to describe the term and description
+
+sample
+--------------
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<ul>
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ul>
+
+<ul type="circle">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ul>
+
+
+<ul  type="square">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ul>
+
+<ul  type="disc">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ul>
+
+<ol>
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ol>
+
+<ol type="A">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ol>
+
+
+<ol type="a">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ol>
+
+<ol type="I">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ol>
+
+<ol type="i">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ol>
+
+<ol type="1">
+
+<li> chennai </li>
+<li> ooty </li>
+<li> coimbatore </li>
+<li> trichy </li>
+
+</ol>
+
+<dl>
+
+<dt> if else </dt>
+<dd> decision making statements </dd>
+
+<dt>while</dt>
+<dd> looping statements </dd>
+
+</dl>
+
+</body>
+
+</html>
+
+
+formatting tags
+------------------------------
+  it is used to format the contents
+
+here, <strong> </strong>, <em></em>, <ins></ins> outputs looks like <b></b>, <i></i><u></u> tags but the 'strong', 'em', 'ins' are semantic tags also it convey the importance of the data not only the appearance.
+
+
+semantic tags: tags which conveys its meaning in the tag name itself
+
+examples:
+-------------------
+<header> </header> tags
+<footer> </footer> tags
+<img></img> tags
+<table> </table> tags
+
+
+sample
+---------------
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+this is <b>  bold </b> text  <br>
+this is <i>  italic </i> text  <br>
+this is <u>  underlined </u> text  <br>
+
+
+the medicine name is <strong> Dolo650  </strong>   <br>
+their quote is  <em>  work well </em>   <br>
+this is <mark> pass </mark> text  <br>
+
+this is <small> terms and conditions apply </small> text  <br>
+
+H<sub>2</sub>O
+(a+b)<sup>2</sup>
+
+this is Old Price<del>1000</del> Offer Price <ins>200</ins>
+
+
+</body>
+
+</html>
+
+
+
+

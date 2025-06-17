@@ -1,0 +1,142 @@
+1. variable name must begin alphabets or underscore
+2. must not have any spaces
+3. must not be a keyword
+4. must not have any symbols except underscore
+
+
+let 10name='arjun' error
+   must begin alphabet or underscore
+let _password='arjun@123" no error
+
+let user name='aravind' error
+   must not have spaces
+
+let while=100; 
+  must not be a keyword
+
+let password-is=12345;
+   special symbols are no allowed
+
+
+
+
+let 10bat=30;  false
+let user name='arjun';  false
+let username="arjun";  true
+let do=12; false
+let location-is="Chennai"; false
+let location_is="Chennai";true
+let isFollow=true; true
+let carname='audi';  true
+
+
+constants
+----------------
+
+integer constants    10,10000, 2
+float constants 10.4 10.123456789
+string constants "arjun", "123" "@#$" "pass@123"
+Boolean - true, false
+
+
+let a=10;
+a=100;
+a=1000;
+
+a=10
+b=10
+
+a - variable
+10 - constant
+
+let letter="z";
+
+
+scenerio1
+  if vegetable quantity is 100kgs then selling price is 30rs per kg
+  if the same vegetable quantity is 40kgs the selling price is 75rs
+  
+exercise:
+  get quantity from the user then print the price per kg based  on the above scenrio
+
+
+
+
+A
+
+10days * x = 1
+
+per day (x) = 1/10
+
+B
+
+15days * y = 1
+
+per day (y) = 1/15
+
+
+noofdays * (1/10+1/15) = 1
+
+noofdays *(5/30) = 1
+
+noofdays = 6 days
+
+
+--------------------------------------------------------
+sample
+--------------
+<html>
+
+
+
+<script>
+
+function display()
+{
+
+ let noofdays_A=parseInt( prompt("enter no of days for A"));
+ let noofdays_B=parseInt( prompt("enter no of days for B"));
+
+  let perdaywork_byA = 1/noofdays_A;
+  let perdaywork_byB = 1/noofdays_B;
+
+  
+
+  let noofdays=1/ ( perdaywork_byA  +perdaywork_byB) ;
+
+  let result = Math.round( noofdays );
+
+
+ alert("If both the persons working together no of days : " + result);
+
+
+}
+
+
+</script>
+
+<head>
+
+</head>
+
+<body>
+
+<form>
+
+
+<input type="button"   value="click"   onclick="display();" />
+
+
+</form>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+media elements
+=========================
+  the video and audio elements are represented as media elements
+
+copy and paste the video and audio file in the same folder where you kept your html source file [ note: the video and audio files can be anywhere, but for present sample use the current location ]
+
+controls : important attribute which gives the control elements for the video and audio elements
+
+
+sample
+------------------
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<video width="400" height="300" controls>
+
+<source src="video1.mp4"  type="video/mp4" >
+
+</video>
+
+<audio controls>
+
+<source src="audio1.mp3"  type="audio/mp3" >
+
+</audio>
+
+
+</body>
+
+</html>
+
+
+
+meta
+------------
+ it is the short form of the essential informations
+
+
+here
+
+<meta http-equiv="refresh" content="5" > 
+  the page will refreshed for every 5 seconds
+
+<meta http-equiv="refresh" content="5, url=https://www.google.com" > 
+  the page will be refreshed and redirected to the next page after 4 seconds
+
+<meta name="viewport"  content="width=device-width, initial-scale=2.0" >  
+  the viewport is the visible area of the browser
+  the initial-scale is used to control the zooming level of the webpage in mobile view
+  In chrome - press F12 [developer tools] - click "mobile - system toggle icon", check the zooming output in mobile view
+
+
+
+sample
+-----------------
+<html>
+
+<head>
+
+<meta http-equiv="refresh" content="5, url=https://www.google.com" > 
+
+<meta name="viewport"  content="width=device-width, initial-scale=2.0" >  
+
+
+</head>
+
+<body>
+
+<video width="400" height="300" controls>
+
+<source src="video1.mp4"  type="video/mp4" >
+
+</video>
+
+<audio controls>
+
+<source src="audio1.mp3"  type="audio/mp3" >
+
+</audio>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,374 @@
+css - cascading style sheet
+----------------------------------------
+ it is the technology used to customize the apperance of the web page
+
+syntax
+-------------
+
+selector
+{
+
+property:values;
+
+
+}
+
+inline css : the css is exist in the same rendering line of a html element
+--------------------
+sample
+----------------
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<div style="background-color:green;height:200px;font-size:40px;color:white;">
+
+ this is container elements
+
+</div>
+
+
+
+</body>
+
+</html>
+
+internal css
+---------------------
+css code is exist in the same file of html using <style> tags
+
+
+sample
+------------------------
+
+<html>
+
+<head>
+
+<style>
+
+div
+{
+
+background-color:brown;
+height:200px;
+font-size:40px;
+color:yellow;"
+
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+ this is container elements
+
+</div>
+
+
+
+</body>
+
+</html>
+
+---------------------------------------
+
+
+external css
+---------------------
+  the css is exist in a separate file. css extension is '.css'
+ex: style1.css
+
+
+style1.css
+---------------------
+div
+{
+background-color:pink;
+height:200px;
+font-size:40px;
+color:yellow;
+}
+
+
+sample9.html
+<html>
+
+<head>
+
+<link rel="stylesheet" href="style1.css" >
+
+</head>
+
+<body>
+
+<div>
+
+ this is container elements
+
+</div>
+
+
+
+</body>
+
+</html>
+
+
+----------------------------------
+
+types of selectors
+-------------------------
+1. simple selector
+
+	1. using elements name - elementname
+	2. using id  - #idname
+	3. using class name - .classname
+        4. universal selector - *
+
+
+<html>
+
+<head>
+
+<style>
+
+div
+{
+background-color:pink;
+height:200px;
+font-size:40px;
+color:yellow;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+ this is div1
+
+</div>
+
+<br>
+
+<div>
+
+ this is div2
+
+</div>
+
+<br>
+
+<div>
+
+ this is div3
+
+</div>
+
+
+<br>
+
+
+<div>
+
+ this is div4
+
+</div>
+
+
+<br>
+
+
+</body>
+
+</html>
+
+------------------------------
+
+<html>
+
+<head>
+
+<style>
+
+div
+{
+background-color:pink;
+height:200px;
+font-size:40px;
+color:yellow;
+}
+
+.div2
+{
+
+background-color:black;
+height:200px;
+font-size:40px;
+color:blue;
+
+}
+
+
+
+#div3
+{
+
+background-color:red;
+height:200px;
+font-size:40px;
+color:white;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+ this is div1
+
+</div>
+
+<br>
+
+<div class="div2">
+
+ this is div2
+
+</div>
+
+<br>
+
+<div id="div3">
+
+ this is div3
+
+</div>
+
+
+<br>
+
+
+<div>
+
+ this is div4
+
+</div>
+
+
+<br>
+
+
+</body>
+
+</html>
+
+
+------------------------------
+
+<html>
+
+<head>
+
+<style>
+
+*     <!-- universal selector  -->
+{
+background-color:pink;
+height:200px;
+font-size:40px;
+color:yellow;
+}
+
+.div2
+{
+
+background-color:black;
+height:200px;
+font-size:40px;
+color:blue;
+
+}
+
+
+
+#div3
+{
+
+background-color:red;
+height:200px;
+font-size:40px;
+color:white;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+ this is div1
+
+</div>
+
+<br>
+
+<div class="div2">
+
+ this is div2
+
+</div>
+
+<br>
+
+<div id="div3">
+
+ this is div3
+
+</div>
+
+
+<br>
+
+
+<div>
+
+ this is div4
+
+</div>
+
+
+<br>
+
+
+<h1> thank u </h1>
+
+</body>
+
+</html>

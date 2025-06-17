@@ -1,0 +1,242 @@
+Attribute Selector
+-----------------------------
+
+
+attribute and its value sample
+-----------------------------------------
+<html>
+
+<head>
+
+<style>
+
+input[type="text"]
+{
+
+background-color:green;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<form>
+
+<input type="text"   id="text1" /> <br>
+<input type="text"   id="text2" /> <br>
+<input type="text"   id="text3" /> <br>
+<input type="button"   name="button1" value="click" /> <br>
+
+</form>
+
+
+
+
+</body>
+
+</html>
+
+
+attribute alone sample
+-------------------------------------
+<html>
+
+<head>
+
+<style>
+
+input[type]
+{
+
+background-color:green;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<form>
+
+<input type="text"   id="text1" /> <br>
+<input type="text"   id="text2" /> <br>
+<input type="text"   id="text3" /> <br>
+<input type="button"   name="button1" value="click" /> <br>
+
+</form>
+
+
+
+
+</body>
+
+</html>
+
+
+
+different attributes can be selected sample
+--------------------------------------------------
+
+
+<html>
+
+<head>
+
+<style>
+
+input[name]
+{
+
+background-color:green;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<form>
+
+<input type="text"   id="text1" /> <br>
+<input type="text"   id="text2" /> <br>
+<input type="text"   id="text3" /> <br>
+<input type="button"   name="button1" value="click" /> <br>
+
+</form>
+
+
+
+
+</body>
+
+</html>
+
+pseudo class selector
+  it is used to apply the css for the particular state of the elements
+pseudo element selector
+  it is used to customize part of the element
+----------------------------------------
+
+<html>
+
+<head>
+
+<style>
+
+a:link
+{
+  color:red;
+}
+
+a:visited
+{
+  color:green;
+}
+
+a:hover
+{
+ color:blue;
+}
+
+a:active
+{
+  color:orange;
+}
+
+#para1::selection
+{
+
+background-color:red;
+color:yellow;
+
+
+}
+
+#para1::first-letter
+{
+
+
+color:purple;
+font-size:50px;
+font-weight:700;
+
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+
+<a href="sample9.html"> click to sample 9 </a>
+
+
+<p id="para1">
+
+this is is para used for pseudo element selector
+
+</p>
+
+
+
+</body>
+
+</html>
+
+combinator selctor: parent child elements or adjacent elements and so on
+the css casn be applied
+
+sample
+------------------
+
+<html>
+
+<head>
+
+<style>
+
+div h1
+{
+  background-color:green;  
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+  <h1>  inside div element </h1>
+
+</div>
+
+ <h1> outside div element </h1>
+
+
+
+</body>
+
+</html>
+
+exercise1: implement html sample for atleast additional three pseudo class and three pseudo element selectors
+
+note: do not use what i already given in the sample
+
+
+

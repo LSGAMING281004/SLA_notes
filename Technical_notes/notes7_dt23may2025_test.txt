@@ -1,0 +1,13 @@
+Test 11am-12.30pm [23may2025]
+------------------------------------------
+
+1. What is html.write a simple html program
+2. Explain about element, attribute and content with example
+3. Write html code with image tag (write full html code)
+4. Explain about relative path and absolute path with example code
+5. Explain about relative unit and absolute unit with example code
+6. Write a code for internal redirection and external redirection using anchor tag
+7. Write a code for login page
+8. Write a code for registration page
+9. Write a simple code for navigation inside a page's particular topic using anchor tag
+10. Write a simple code for navigation outside  page's particular topic using anchor tag

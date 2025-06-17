@@ -1,0 +1,170 @@
+Navigation within a page using anchor tag
+---------------------------------------------------
+ create sample3.html file as below. if u click the 'go to topics5' it will navigate to topics5
+
+note: use <pre> tag to get the result as what u typed
+
+Page1 - sample3.html
+----------
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<a href="#topic5"> go to topics5 </a>
+
+<pre>
+
+<h1> topic1 </h1>  
+   this is about topic 1
+
+<h1> topic2 </h1>
+   this is about topic 2
+
+<h1> topic3 </h1>
+   this is about topic 3
+
+<h1> topic4 </h1>
+   this is about topic 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="topic5"> topic5 </h1>
+   this is about topic 5
+
+<h1> topic6 </h1>
+   this is about topic 6
+
+<h1> topic7 </h1>
+   this is about topic 7
+
+
+</pre>
+
+
+
+</body>
+
+</html>
+
+
+
+Navigation to the specific topic in another page
+-------------------------------------------------------
+ create sample4.html file as below. if u click the 'go to topics5 in sample3 page' it will navigate to topics5 in page1 [sample3.html]
+
+
+
+Another Page - Page 2  [  sample4.html   ]
+------------------------------------
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<a href="sample3.html#topic5"> go to topics5 in sample3 page </a>
+
+<pre>
+
+<h1> topic11 </h1>  
+   this is about topic 11
+
+<h1> topic12 </h1>
+   this is about topic 12
+
+<h1> topic13 </h1>
+   this is about topic 13
+
+<h1> topic14 </h1>
+   this is about topic 14
+
+
+
+target attribute in anchor tag
+-----------------------------------------
+  it is used to decide where the new page should be open
+
+_blank - for new tab
+_self - same tab
+
+sample
+---------------
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+<a href="https://www.google.com" target="_blank"> click to google </a>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="topic15"> topic15 </h1>
+   this is about topic 15
+
+<h1> topic16 </h1>
+   this is about topic 16
+
+<h1> topic17 </h1>
+   this is about topic 17
+
+
+</pre>
+
+
+
+</body>
+
+</html>
