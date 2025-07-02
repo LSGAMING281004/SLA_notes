@@ -1,0 +1,138 @@
+function
+    a set of statements used to do a particular task
+
+syntax
+----------------
+function functionname ()
+{
+
+ statements;
+
+}
+
+based on parameters and return types
+--------------------------------------------------
+1. no parameter, no return type
+2. with parameter, no return type
+3. with parameter, with return type
+4. no parameter, with return type
+
+1. no parameter, no return type
+
+
+<html>
+<head>
+
+<script>
+
+//no parameter, no return type
+
+function addition()
+{
+
+let a=100, b=200;
+
+let c=a+b;
+
+alert( " result is " +c);
+
+
+}
+
+
+</script>
+
+
+<head>
+<body>
+
+<script>
+
+addition();
+
+</script>
+
+</body>
+</html>
+
+
+2. with parameter, no return type
+
+<html>
+<head>
+
+<script>
+
+function addition( a, b)
+{
+
+
+let c=a+b;
+
+alert(" result is " + c);
+
+}
+
+
+
+</script>
+
+
+<head>
+<body>
+
+<script>
+
+let a=1000, b=2000;
+addition(a, b);
+
+
+</script>
+
+</body>
+</html>
+
+
+
+3. with parameter, with return type
+
+<html>
+<head>
+
+<script>
+
+//with para, with return
+function  addition( a, b)
+{
+
+let c=a+b;
+return c;
+
+}
+
+
+</script>
+
+
+
+<head>
+<body>
+
+<script>
+
+let a=100, b=200;
+let z = addition(a, b);
+
+alert(" output is " +z);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
