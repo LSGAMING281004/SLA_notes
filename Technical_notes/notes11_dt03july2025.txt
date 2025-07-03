@@ -1,0 +1,69 @@
+class
+  it is collection of objects or collection of information
+
+object
+ it is real entity of class or runtime instance of the class
+
+sample
+-----------------
+
+<html>
+<head>
+
+<script>
+
+class country
+{
+
+getdetails(  cname, lang, cap, pop)
+{
+
+this.countryname =cname;
+this.language=lang;
+this.capital=cap;
+this.population=pop;
+
+
+}
+
+displaydetails()
+{
+
+document.write( " country name " + this.countryname +"<br>");
+document.write( " language " + this.language +"<br>");
+document.write( " capital " + this.capital +"<br>");
+document.write( " population " + this.population +"<br>" );
+
+}
+
+
+}
+
+
+</script>
+
+
+<head>
+<body>
+
+<script>
+
+c1=new country(); // c1=[countryname, language, capital, population, getdetails(), displaydetails() ]
+
+c2=new country(); //c1=[countryname, language, capital, population, getdetails(), displaydetails() ]
+
+c1.getdetails("india", "hindi", "delhi", 135);
+c2.getdetails("germany", "german", "berlin", 40);
+
+c1.displaydetails();
+c2.displaydetails();
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
