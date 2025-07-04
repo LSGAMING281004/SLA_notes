@@ -1,0 +1,236 @@
+constructor
+---------------------
+  it is the special function used to initialize the data members of the class. 
+ it will be called automatically when object is created
+
+sample
+---------------
+<html>
+<head>
+
+<script>
+
+class myClass{
+    constructor(){
+        this.a=200;
+        this.b=100;
+    } 
+    addition(){
+        this.c=this.a+this.b;
+        document.write("addition" +this.c);
+    }
+}
+
+
+
+
+</script>
+
+
+<head>
+<body>
+
+
+<script>
+
+let m1=new myClass();
+// m1.initialize();
+m1.addition();
+
+
+</script>
+
+</body>
+</html>
+
+constructor with parameter
+----------------------------------
+ the constructor can have parameters. this will be initialized by passing parameter while creating objects as below
+
+sample
+---------------
+<html>
+<head>
+
+<script>
+
+class myClass{
+    constructor(x,y){
+        this.a=x;
+        this.b=y;
+    } 
+    addition(){
+        this.c=this.a+this.b;
+        document.write("addition" +this.c);
+    }
+}
+
+
+
+
+</script>
+
+
+<head>
+<body>
+
+
+<script>
+
+let m1=new myClass(2000,1000);
+// m1.initialize();
+m1.addition();
+
+
+</script>
+
+</body>
+</html>
+
+note:
+  constructor overloading : the existence of more than one constructors is constructor overloading
+javascript does not support constructor overloading
+
+
+inheritance
+--------------------------
+ creating new classes from existing classes. the class from which data are inherited is base class [parent class, super class], the class to which data are inherited is derived class [ child class, sub class].
+
+
+sample
+----------------
+<html>
+<head>
+
+<script>
+
+class myClass_1{
+    initialize(){
+        this.a=200;
+        this.b=100;
+    } 
+    addition(){
+        this.c=this.a+this.b;
+        document.write("addition" +this.c);
+    }
+}
+class myClass_2 extends myClass_1
+{
+    
+    subtraction(){
+        this.c=this.a-this.b;
+        document.write("subtraction" +this.c);
+    }
+}
+
+
+
+
+</script>
+
+
+<head>
+<body>
+
+
+<script>
+
+let m2=new myClass_2();
+m2.initialize();
+m2.addition();
+m2.subtraction();
+
+
+</script>
+
+</body>
+</html>
+
+
+inheritance types
+-----------------------------------
+
+1. single level inheritance
+
+A
+|
+B
+
+2. multi level
+
+A
+|
+B
+|
+C
+
+3. multiple  -  not supported in javascript
+
+A     B
+|     |
+ ----
+   |
+   C
+
+4. hierarchial
+
+    A
+   / \
+  B   C
+ / \
+D   E
+
+
+5. hybrid :  -  not supported in javascript
+
+multi level + multiple =hybrid
+
+A
+|
+B       C
+|       |
+ ------
+    |
+    D
+
+
+A
+|
+B
+|__
+   |
+   D
+
+B   C
+|   |
+ ---
+  |
+  D
+
+
+
+
+A
+ display()
+
+B
+  display()
+
+
+C
+   display:A
+   display:B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
