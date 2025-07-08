@@ -1,0 +1,144 @@
+<html>
+<head>
+
+<script>
+
+function display()
+{
+
+let element =  document.getElementById("text1");
+
+let msg = element.value;
+
+document.write( " the entered message is " + msg);
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+<head>
+<body>
+
+<form>
+
+<input type="text" id="text1" value="test" /> <br>
+<input type="button" value="click" onclick="display();" />
+
+
+</form>
+
+
+</body>
+</html>
+
+using document object's style property , the css values can also be processed as below
+
+sample
+----------------
+<html>
+<head>
+
+<script>
+
+function display()
+{
+
+let element =  document.getElementById("text1");
+
+element.style.backgroundColor="blue";
+element.style.color="red";
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+<head>
+<body>
+
+<form>
+
+<input type="text" id="text1" /> <br>
+<input type="button" value="click" onclick="display();" />
+
+
+</form>
+
+
+</body>
+</html>
+
+using document object, the javascript functions can also be bind with html elements
+
+
+sample
+----------------
+<html>
+<head>
+
+<script>
+
+function display1()
+{
+
+alert(" this is display1 function clicked by button1");
+
+let element=document.getElementById("button2");
+
+element.onclick=display2;
+
+}
+
+function display2()
+{
+
+alert("this is display2 clicked by button2" );
+
+}
+
+</script>
+
+
+<head>
+<body>
+
+<form>
+
+<input type="text" id="text1" /> <br>
+<input type="button" value="click1" onclick="display1();" /><br>
+<input type="button" id="button2" value="click2" /><br>
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
