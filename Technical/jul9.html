@@ -1,0 +1,41 @@
+<html>
+<head>
+
+<script>
+
+var x=10;
+let y=20;
+const z=30;
+
+function display1()
+{
+
+let element = document.getElementById("text-1");
+let message = element.value;
+
+if(message=="")
+{
+alert("User name should not be empty");
+return false;
+}
+else
+{
+alert("Got it");
+return true;
+}
+}
+
+</script>
+
+</head>
+<body>
+
+<form action="jul8.html" onsubmit="return display1();">
+
+<input type="text" id="text-1">
+<input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
