@@ -1,0 +1,156 @@
+DDL - data definition language
+  create table, alter table, drop table
+
+create table student...
+
+drop table student
+
+DML - data manipulation language queries
+  insert, delete, update record
+
+
+DCL - data control language - grant, revoke queries
+
+DQL - data query language - all select queries
+
+insert into student...
+
+delete from student where rollno = 1;
+
+update student set name='arjun', mark=100 where rollno =1 ;
+
+select * from student;
+
+-------------------------------------------------
+
+Data Integrity
+-------------------------
+  It ensures the accuracy and correctness of data.
+
+Constraints are used to ensure the data integrity
+
+constraints are
+---------------------
+1. primary key constraint
+2. unique key constraint
+3. foreign key constraint
+4. check constraint
+5. default constraint
+
+
+primary key
+---------------------
+1. it does not allow duplicate values
+2. it does not allow null values
+3. only one primary key is allowed per table
+   
+
+before constraint
+--------------------------------
+
+create database mydatabase;
+
+use mydatabase;
+
+create table student (rollno int, name varchar(30), mark int, constraint pk primary key(rollno));
+
+drop table student;
+
+insert into student values(1, 'aaa', 60);
+insert into student values(2, 'bbb', 70);
+insert into student values(3, 'ccc', 80);
+
+select * from student;
+
+insert into student values ( 1, 'ddd', 90); -- no error
+
+insert into student values(4, 'aaa', 100); -- no error
+
+insert into student values(5, 'ddd', 60); -- no error
+
+insert into student(rollno, name) values(6, 'eee'); -- no error
+
+select * from student;
+
+insert into student(name, mark) values('ggg', 100); -- no error
+
+
+
+
+after constraint
+--------------------------
+
+create database mydatabase;
+
+use mydatabase;
+
+create table student (rollno int, name varchar(30), mark int, constraint pk primary key(rollno));
+
+drop table student;
+
+insert into student values(1, 'aaa', 60);
+insert into student values(2, 'bbb', 70);
+insert into student values(3, 'ccc', 80);
+
+select * from student;
+
+insert into student values ( 1, 'ddd', 90); -- error
+
+insert into student values(4, 'aaa', 100); -- no error
+
+insert into student values(5, 'ddd', 60); -- no error
+
+insert into student(rollno, name) values(6, 'eee'); -- no error
+
+select * from student;
+
+insert into student(name, mark) values('ggg', 100); -- error
+
+
+foreign key constraint
+---------------------------------
+  it always refers the primary key column of another table
+it does allow the value which are already exist in the primary key column of an another table.
+
+ 1. it does allows duplicate values
+
+queries
+------------------
+drop table sports;
+
+create table sports(rollno int, sportname varchar(20) , constraint fk foreign key (rollno) references student(rollno) );
+
+
+insert into sports values(1, 'football'); - no error
+insert into sports values(2, 'cricket'); - no error
+
+insert into sports values(10, 'hockey'); -- error
+insert into sports values(1, 'hockey'); -- no error
+
+select * from sports;
+
+check constraint
+-------------------------
+ it is used to ensure the range of values or pattern values and so on
+
+price range must be 100 to 500
+
+queries
+--------------------
+use mydatabase;
+create table product(prdtid int,name varchar(30), price int, constraint ck check(price between 100 and 500));
+
+insert into product values(1, 'product1', 150); -- no error
+insert into product values(2, 'product2', 100); -- no error
+insert into product values(3, 'product3', 500); -- no error
+
+select * from product;
+
+insert into product values(4, 'product4', 1000); -- error
+insert into product values(5, 'product5', 10); -- error
+
+
+
+
+
+
