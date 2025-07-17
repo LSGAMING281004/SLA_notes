@@ -1,0 +1,70 @@
+unique key constraint
+---------------------------
+ same as primary key that is it does not allow duplicate values
+1. more than one unique keys are possible per table
+2. it will allow null values
+
+query
+------------
+use mydatabase;
+create table employee(empid int , name varchar(30), salary int, emailid varchar(30), mobile varchar(30),
+constraint pk primary key(empid), constraint uk1 unique key(emailid), constraint uk2 unique key(mobile)
+)
+
+
+insert into employee values(1, 'aaa', 10000, 'aaa@gmail.com', '12345'); -- no error
+
+
+insert into employee values(1, 'bbb', 20000, 'bbb@gmail.com', '23456'); -- error
+
+insert into employee values(2, 'bbb', 20000, 'aaa@gmail.com', '23456'); -- error uk1
+
+insert into employee values(2, 'bbb', 20000, 'bbb@gmail.com', '12345'); -- error uk2
+
+
+unique key will allow null values
+---------------------------------------------
+default constraint
+--------------------------
+  default constraints are used to insert default value instead of null value the particular field does not have values.
+
+query
+-----------------
+insert into employee(empid, name, salary,emailid) values(2, 'bbb', 20000, 'bbb@gmail.com');
+insert into employee(empid, name, salary,emailid) values(3, 'ccc', 30000, 'ccc@gmail.com');
+
+select * from employee;
+
+create table product(prdtid int, name varchar(30), price int default(100));
+
+alternate ways to add constraint 
+-------------------------------------
+use mydatabase;
+
+create table sports(sportid int not null, name varchar(30) );
+
+insert into sports values(1, 'cricket');
+
+select * from sports;
+
+insert into sports(name) values('football');
+
+alter table sports add constraint pk2 primary key(sportid);
+
+insert into sports values(1, 'hockey');
+
+create table student3(rollno int primary key, name varchar(30));
+
+
+
+
+drop constraint
+--------------
+
+alter table sports drop primary key;
+
+
+
+
+
+
