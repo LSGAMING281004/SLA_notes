@@ -1,0 +1,277 @@
+joins
+---------------
+  it is the technique used to fetch the values from multiple tables
+
+1. inner join
+2. outer  join - left, right,  [full - use set operator ]
+3. cross join
+4. self join
+
+------------------------------------------------------------------
+
+use mydatabase;
+create table employee(empid int, name varchar(30), salary int);
+
+use mydatabase;
+insert into employee values(1, 'aaa', 10000);
+insert into employee values(2, 'bbb', 20000);
+insert into employee values(3, 'ccc', 30000);
+insert into employee values(4, 'ddd', 40000);
+
+
+
+use mydatabase;
+create table personal(empid int, city varchar(30));
+
+use mydatabase;
+insert into personal values(1, 'bangalore');
+insert into personal values(2, 'chennai');
+insert into personal values(5, 'delhi');
+insert into personal values(6, 'ernakulam');
+
+
+empid, name, salary
+
+select * from employee;
+select empid, name, salary from employee;
+
+
+empid, city
+
+select * from personal;
+select empid, city from personal;
+
+------------------------------------------------------
+
+employee
+empid   name   salary
+1       aaa    10000
+2       bbb    20000
+3       ccc    30000
+4       ddd    40000
+
+personal
+empid   city
+1       bangalore
+2       chennai
+5       delhi
+6       ernakulam
+
+
+inner join
+-----------------
+  it returns all the column values for matching records. but for non matching records it does not return any value.
+
+
+inner join query
+----------------------------
+use mydatabase;
+
+select emp.empid , emp.name, per.city from employee emp inner join personal per on emp.empid = per.empid;
+
+
+------------------------------------------------------
+
+after inner join
+
+empid, name, city
+
+1      aaa   bangalore
+2      bbb   chennai
+
+------------------------------------------------------
+
+
+
+note: inner join is the default query
+-------------
+use mydatabase;
+select emp.empid , emp.name, per.city from employee emp  join personal per on emp.empid = per.empid;
+
+-----------------------------------------------------------------
+
+outer join
+-----------------
+  it returns all column value from both tables for matching records. but it returns value only from either left side table or right side table for non matching records
+
+
+left outer join
+-----------------
+  it returns all column value from both tables for matching records. but it returns value only from left side table  for non matching records
+
+left outer join
+---------------------
+
+use mydatabase;
+
+select emp.empid , emp.name, per.city from employee emp left outer join personal per on emp.empid = per.empid;
+
+
+empid  name   city
+1      aaa    bangalore
+2      bbb    chennai
+3      ccc    null
+4      ddd    null
+
+right outer join
+---------------------
+
+
+
+right outer join
+-----------------
+  it returns all column value from both tables for matching records. but it returns value only from right side table  for non matching records
+
+right outer join
+---------------------
+
+use mydatabase;
+
+select emp.empid , emp.name, per.city from employee emp right outer join personal per on emp.empid = per.empid;
+
+
+empid  name   city
+1      aaa    bangalore
+2      bbb    chennai
+null   null   delhi
+null   null   ernakulam
+
+--------------------------------------------------------------------
+
+full outer join : not supported in mysql . use set operator
+-----------------------
+
+left + right = full
+
+empid    name    city
+1        aaa     bangalore
+2        bbb     chennai
+3        ccc     null
+4        ddd     null
+null     null    delhi
+null     null    ernakulam
+
+
+-------------------------------------------------------------------
+
+cross join  [cartesian product ]
+--------------------------------------------
+   every row from one table will be combined with all the rows from another table
+
+computer
+------------------
+cid   cname     cprice
+1     hp        10000
+2     lenova    20000
+3     dell      30000
+
+
+addon
+------------
+aid      aname       aprice
+1       sdcard       100
+2       wl mouse     200
+3       webcam       300
+
+
+hp  sd card       10100
+hp  wl mouse      10200
+hp  webcam        10300
+
+dell  sd card    20100
+dell  wl mouse   20200
+dell  webcam     20300
+
+lenova  sd card  30100
+lenova  wl mouse 30200
+lenova  webcam   30300
+
+
+use mydatabase;
+CREATE table computer(cid int, cname varchar(30), cprice int);
+
+INSERT INTO computer values(1, 'hp', 10000);
+INSERT INTO computer values(2, 'dell', 20000);
+INSERT INTO computer values(3, 'lenovo', 30000);
+
+
+
+use mydatabase;
+
+CREATE table addon(aid int, aname varchar(30), aprice int);
+
+INSERT INTO addon values(1, 'SD Card', 100);
+INSERT INTO addon values(2, 'Wireless Mouse', 200);
+INSERT INTO addon values(3, 'Web Cam', 300);
+
+
+cross join query
+-------------------------
+
+
+use mydatabase;
+
+select com.cname, ad.name, com.cprice + ad.aprice as 'total price' from addon ad cross join computer com;
+
+
+result
+---------------
+cname	name	        total price	
+Dell	SD Card	        10100	
+Dell	Wireless Mouse	10200	
+Dell	Web Cam	        10300	
+Acer	SD Card	        20100	
+Acer	Wireless Mouse	20200	
+Acer	Web Cam	        20300	
+Lenovo	SD Card  	30100	
+Lenovo	Wireless Mouse	30200	
+Lenovo	Web Cam	        30300	
+
+------------------------------------------------------
+
+self join
+-----------------
+ a table refers itself for the output
+
+
+create table employees (empid    int, name   varchar(30), salary int, managerid int);
+
+
+insert into employees values (1, 'aaa', 10000, 4);
+insert into employees values  (2, 'bbb', 20000, 6);
+insert into employees  values (3, 'ccc', 30000, 6);
+insert into employees  values  (4, 'ddd', 40000, 5);
+insert into employees   values (5, 'eee', 50000, 7);
+insert into employees  values  (6, 'fff', 60000, 7);
+insert into employees  values (7, 'ggg', 70000, 8);
+insert into employees  values  (8, 'hhh', 80000, 10);
+
+
+
+emp1
+
+empid             name              salary     managerid
+1,                aaa                10000,        4
+2                 bbb                20000         6
+3                 ccc                30000         6
+4                 ddd                 40000         5
+5                 eee                50000         7
+6                 fff                60000         7
+7                 ggg                70000         8
+8                 hhh                80000         10
+
+
+emp2
+
+empid             name              salary     managerid
+1,               'aaa',              10000,        4
+2                 bbb                20000         6
+3                 ccc                30000         6
+4                 ddd                40000         5
+5                 eee                50000         7
+6                 fff                60000         7
+7                 ggg                70000         8
+8                 hhh                80000         10
+
+
+select  emp1.empid, emp1.name,   emp2.name as 'manager name' from employees emp1 join employees emp2  on  emp1.managerid=emp2.empid;
