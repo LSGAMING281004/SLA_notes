@@ -1,0 +1,46 @@
+self join
+-----------------
+ a table refers itself for the output
+
+
+create table employees (empid    int, name   varchar(30), salary int, managerid int);
+
+
+insert into employees values (1, 'aaa', 10000, 4);
+insert into employees values  (2, 'bbb', 20000, 6);
+insert into employees  values (3, 'ccc', 30000, 6);
+insert into employees  values  (4, 'ddd', 40000, 5);
+insert into employees   values (5, 'eee', 50000, 7);
+insert into employees  values  (6, 'fff', 60000, 7);
+insert into employees  values (7, 'ggg', 70000, 8);
+insert into employees  values  (8, 'hhh', 80000, 10);
+
+
+
+emp1
+
+empid             name              salary     managerid
+1,                aaa                10000,        4
+2                 bbb                20000         6
+3                 ccc                30000         6
+4                 ddd                 40000         5
+5                 eee                50000         7
+6                 fff                60000         7
+7                 ggg                70000         8
+8                 hhh                80000         null
+
+
+emp2
+
+empid             name              salary     managerid
+1,               'aaa',              10000,        4
+2                 bbb                20000         6
+3                 ccc                30000         6
+4                 ddd                40000         5
+5                 eee                50000         7
+6                 fff                60000         7
+7                 ggg                70000         8
+8                 hhh                80000         10
+
+
+select  emp1.empid, emp1.name,   emp2.name as 'manager name' from employees emp1 join employees emp2  on  emp1.managerid=emp2.empid;
