@@ -1,0 +1,135 @@
+stored procedure
+------------------------
+ it is a pre compiled version of set of statements used to do a particular task.
+
+note:
+  delimiter is used to mention the end of query. default delimiter is ; but while writing stored procedure it can be changed.
+
+
+queries
+-----------------
+
+drop database mydatabase;
+
+create database mydatabase;
+
+use mydatabase;
+
+create table student(rollno int, name varchar(30), mark int);
+
+insert into student values(1, 'aaa', 60);
+insert into student values(2, 'bbb', 70);
+insert into student values(3, 'ccc', 80);
+insert into student values(4, 'ddd', 90);
+insert into student values(5, 'eee', 70);
+
+select * from student;
+
+creating procedure
+---------------------------
+
+use mydatabase;
+
+delimiter //
+
+create procedure procedure1()
+begin
+
+select * from student;
+
+end;
+
+//
+
+delimiter ;
+
+call procedure1;
+
+
+to drop procedure
+--------------------------
+drop procedure procedure1;
+
+
+-------------------
+stored procedure with parameter
+-------------------------------------
+
+
+use mydatabase;
+
+delimiter //
+
+create procedure procedure2(rno int)
+begin
+
+select * from student where rollno= rno;
+
+end;
+
+//
+
+delimiter ;
+
+call procedure2(2);
+
+
+procedure123(min int, max int)
+
+select * from student where mark between 50 and 80
+
+----------------------------------------------
+storing data in variable
+------------------------------------
+
+select mark into @result from student where rollno = 2;
+-- select @result;
+select concat(' result is ', @result) as 'message'; 
+
+
+-------------------------------------------------------------
+stored procedure with out keyword
+-------------------------------------
+  the 'out' keyword is used to sending the out the values from stored procedure.
+  using 'out' keyword more than one values can be returned from the stored procedure
+
+
+delimiter //
+
+create procedure procedure12(rno int, out res int)
+begin
+
+select mark into res from student where rollno = rno;
+
+end;
+
+//
+
+delimiter ;
+
+
+call procedure12(2, @result);
+select @result;
+
+--------------------------------
+
+
+
+
+function display(a, b, out c,out d, out e, out f)
+{
+
+c=a+b;
+d=a-b;
+e=a*b;
+f=a/b;
+
+return c;
+
+}
+
+
+
+
+
+
