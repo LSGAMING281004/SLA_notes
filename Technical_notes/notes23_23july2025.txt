@@ -1,0 +1,288 @@
+use mydatabase;
+
+create table student(rollno int, name varchar(30), mark int);
+
+insert into student values(1, 'aaa', 60);
+insert into student values(2, 'bbb', 70);
+insert into student values(3, 'ccc', 80);
+
+
+select * from student;
+
+view
+ it is a subset of table
+
+use mydatabase;
+create view myview1 as select rollno, name from student;
+
+
+use mydatabase;
+select * from myview1;
+
+-------------------------------------------------
+
+use mydatabase;
+insert into myview1 values(4, 'ddd');
+
+use mydatabase;
+select * from myview1;
+
+use mydatabase;
+select * from student;
+----------------------------------
+
+use mydatabase;
+delete from myview1 where rollno = 2;
+
+use mydatabase;
+select * from myview1;
+
+use mydatabase;
+select * from student;
+
+----------------------------------
+use mydatabase;
+update myview1 set name='david' where rollno=4;
+
+use mydatabase;
+select * from myview1;
+
+use mydatabase;
+select * from student;
+
+----------------------------------
+
+use mydatabase;
+create or replace view myview1 as select rollno, mark from student;
+
+use mydatabase;
+select * from myview1;
+--------------------------------------------------------
+use mydatabase;
+drop view myview1;
+
+
+use mydatabase;
+select * from myview1;
+  error
+
+aggregate functions
+-----------------------------
+ it returns single result irrespective of number of records
+
+create table employee (empid int, name varchar(30), salary int, dept varchar(20) );
+
+insert into employee values(1, 'aaa', 10000, 'support');
+insert into employee values(2, 'bbb', 30000, 'development');
+insert into employee values(3, 'ccc', 20000, 'testing');
+insert into employee values(4, 'ddd', 50000, 'testing');
+insert into employee values(5, 'eee', 40000, 'support');
+insert into employee values(6, 'fff', 60000, 'development');
+insert into employee values(7, 'ggg', 16000, 'support');
+
+
+select count(*) from employee;
+select sum(salary) from employee;
+select avg(salary) from employee;
+select min(salary) from employee;
+select max(salary) from employee;
+
+
+
+group by
+---------------
+ it is used to group set of records based on value
+
+note:
+   you must mention the aggregate function and the column which is used for group by function in the select query otherwise the result will be unexpected
+
+
+use mydatabase;
+
+create table employee (empid int, name varchar(30), salary int, dept varchar(20) );
+
+insert into employee values(1, 'aaa', 10000, 'support');
+insert into employee values(2, 'bbb', 30000, 'development');
+insert into employee values(3, 'ccc', 20000, 'testing');
+insert into employee values(4, 'ddd', 50000, 'testing');
+insert into employee values(5, 'eee', 40000, 'support');
+insert into employee values(6, 'fff', 60000, 'development');
+insert into employee values(7, 'ggg', 16000, 'support');
+
+
+select * from employee;
+
+select  sum(salary) from employee group by dept;
+
+select  dept, sum(salary) from employee group by dept;
+
+select  name, dept, sum(salary) from employee group by dept; // unexpected result
+
+
+having
+---------------
+  instead of 'where' clause the 'having' can be used for filter the records in group by functions
+
+
+select  dept, sum(salary) from employee group by dept having sum(salary) > 70000;
+
+-------------------------------------------------------------------------
+order by
+--------------
+  used to sort the records based condition in ascending or descending order .
+
+use mydatabase;
+
+create table employee (empid int, name varchar(30), salary int, dept varchar(20) );
+
+insert into employee values(1, 'aaa', 10000, 'support');
+insert into employee values(2, 'bbb', 30000, 'development');
+insert into employee values(3, 'ccc', 20000, 'testing');
+insert into employee values(4, 'ddd', 50000, 'testing');
+insert into employee values(5, 'eee', 40000, 'support');
+insert into employee values(6, 'fff', 60000, 'development');
+insert into employee values(7, 'ggg', 16000, 'support');
+
+
+select * from employee;
+
+use mydatabase;
+select * from employee order by salary;
+
+use mydatabase;
+select * from employee order by salary desc;
+
+
+note:asc is default sorting order
+
+use mydatabase;
+select * from employee order by salary asc;
+
+
+ranking functions
+-------------------
+  it is used to give ranks for the records based on conditions
+
+use mydatabase;
+
+create table employee (empid int, name varchar(30), salary int, dept varchar(20) );
+
+insert into employee values(1, 'aaa', 10000, 'support');
+insert into employee values(2, 'bbb', 30000, 'development');
+insert into employee values(3, 'ccc', 20000, 'testing');
+insert into employee values(4, 'ddd', 50000, 'testing');
+insert into employee values(5, 'eee', 40000, 'support');
+insert into employee values(6, 'fff', 60000, 'development');
+insert into employee values(7, 'ggg', 16000, 'support');
+
+
+select * from employee;
+
+insert into employee values(8, 'jjj', 16000, 'support');
+insert into employee values(9, 'kkk', 30000, 'development');
+insert into employee values(10, 'mmm', 20000, 'testing');
+insert into employee values(11, 'nnn', 20000, 'testing');
+
+
+
+
+use mydatabase;
+select empid, name, salary, row_number() over( order by salary desc) from employee;
+
+
+use mydatabase;
+select empid, name, salary,rank() over( order by salary desc) from employee;
+
+use mydatabase;
+select empid, name, salary, dense_rank() over( order by salary desc) from employee;
+
+
+exercise:
+---------------------
+
+salary  rownumber     rank      dense_rank
+70000    1             1           1
+60000    2             2           2
+50000    3             3           3
+30000    4             4           4
+30000    5             4           4
+20000    6             6           5
+
+
+select name, salary, row_number() over ( order by salary desc) as 'row number' , rank() over ( order by salary desc) as 'rank', dense_rank() over ( order by salary desc) as 'dense_rank'   from employee;
+
+-------------------------------------------------------------------------
+
+
+set operations
+-----------------------
+  it is used to append the resultsets from set of queries
+
+use mydatabase;
+create table cricket (rollno int, name varchar(30), score int);
+create table football (rollno int, name varchar(30), score int);
+
+
+use mydatabase;
+insert into cricket values(1, 'aaa', 70);
+insert into cricket values(2, 'bbb', 50);
+insert into cricket values(3, 'ccc', 80);
+insert into cricket values(4, 'ddd', 30);
+
+insert into football values(1, 'aaa', 50);
+insert into football values(2, 'bbb', 40);
+insert into football values(11, 'mmm', 20);
+insert into football values(12, 'nnn', 70);
+
+
+----------------------------------------------------------------------
+
+union
+----------------
+  it combines the result from all the queries
+
+[ name list who plays either cricket or football]
+
+use mydatabase;
+select rollno, name from cricket union 
+select rollno, name from football;
+
+
+note:
+  the no of columns must be same in all the queries for set operations
+
+
+intersect
+----------------
+  it returns only the matching rows in all queries
+ [ name list who plays both cricket and footbal]
+
+use mydatabase;
+select rollno, name from cricket intersect
+select rollno, name from football;
+
+
+except
+----------------
+  it returns the result which are exist in one side and does not come in other side query
+
+[ name list who plays cricket alone ]
+
+use mydatabase;
+select rollno, name from cricket except
+select rollno, name from football;
+
+
+
+all and distinct
+
+
+all : it returns with duplicates
+
+use mydatabase;
+select rollno, name from cricket union  all
+select rollno, name from football;
+
+distinct : it returns without duplicates
+[ this is default behaviour in set operations ]
+------------------------------------------------------------------
